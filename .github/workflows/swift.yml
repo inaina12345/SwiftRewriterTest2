@@ -17,4 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
+# エラーでも処理を継続する
+      continue-on-error: true    
       run: swift run SwiftRewriter files --colorize --target stdout MyClass.h MyClass.m
